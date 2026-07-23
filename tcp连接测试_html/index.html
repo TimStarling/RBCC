@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>TCP 数据接收终端</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="launch-warning" id="launchWarning" hidden>
+      <strong>当前打开方式不正确</strong>
+      <p>HTML 页面不能脱离本地 TCP 桥接服务单独运行。请关闭此页，双击项目中的 <code>start.bat</code>，然后使用服务地址打开。</p>
+      <a href="http://127.0.0.1:3000">打开 http://127.0.0.1:3000</a>
+    </section>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">RK1808 · DATA LINK</p>
+        <h1>TCP 数据接收终端</h1>
+        <p class="subtitle">建立原生 TCP 连接，实时查看设备上传的数据</p>
+      </div>
+      <div class="status-pill" id="statusPill" data-status="disconnected">
+        <span class="status-dot"></span>
+        <span id="statusText">未连接</span>
+      </div>
+    </header>
+
+    <section class="connection-card" aria-labelledby="connectionTitle">
+      <div class="section-heading">
+        <div>
+          <span class="step">01</span>
+          <h2 id="connectionTitle">连接配置</h2>
+        </div>
+        <p id="connectionDetail">等待建立 TCP 握手</p>
+      </div>
+
+      <div class="connection-grid">
+        <label>
+          <span>服务器 IP</span>
+          <input id="hostInput" value="10.16.137.132" autocomplete="off" spellcheck="false">
+        </label>
+        <label class="port-field">
+          <span>监听端口</span>
+          <input id="portInput" type="number" value="8888" min="1" max="65535">
+        </label>
+        <button class="primary-button" id="connectButton" type="button">建立连接</button>
+      </div>
+    </section>
+
+    <section class="terminal-card" aria-labelledby="terminalTitle">
+      <div class="section-heading terminal-heading">
+        <div>
+          <span class="step">02</span>
+          <h2 id="terminalTitle">传输数据</h2>
+        </div>
+        <div class="terminal-actions">
+          <span id="packetCounter">0 帧 / 0 B</span>
+          <button class="ghost-button" id="clearButton" type="button">清空</button>
+        </div>
+      </div>
+
+      <div class="terminal" id="terminal" role="log" aria-live="polite" aria-label="TCP 收发数据日志">
+        <div class="empty-state" id="emptyState">
+          <span class="pulse-ring"></span>
+          <strong>等待设备数据</strong>
+          <small>连接成功后，每个完整传输帧会实时显示在这里</small>
+        </div>
+      </div>
+
+      <form class="send-bar" id="sendForm">
+        <input id="messageInput" placeholder="输入要发送到设备的消息" autocomplete="off" disabled>
+        <button class="send-button" id="sendButton" type="submit" disabled>发送</button>
+      </form>
+    </section>
+
+    <footer>
+      <span>本地 TCP 桥接服务</span>
+      <span class="footer-separator">·</span>
+      <span>UTF-8 / 原始字节</span>
+    </footer>
+  </main>
+  <script>
+    if (location.protocol === 'file:') {
+      document.querySelector('#launchWarning').hidden = false;
+    } else {
+      const appScript = document.createElement('script');
+      appScript.src = 'app.js';
+      document.body.appendChild(appScript);
+    }
+  </script>
+</body>
+</html>

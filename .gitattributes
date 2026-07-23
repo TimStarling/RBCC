@@ -1,0 +1,28 @@
+* text=auto
+
+# Cross-platform source files
+*.sh text eol=lf
+*.py text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.s text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.svg text eol=lf
+*.desktop text eol=lf
+*.ioc text eol=lf
+*.uvprojx text eol=lf
+*.uvoptx text eol=lf
+
+# Windows launchers
+*.bat text eol=crlf
+
+# Binary assets and packages
+*.png binary
+*.wav binary
+*.mp4 binary
+*.pdf binary
+*.deb binary

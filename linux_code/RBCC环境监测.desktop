@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=RBCC环境监测
+Comment=龙门起重机环境传感器实时监控上位机
+Exec=/home/HwHiAiUser/Desktop/RBCC/RBCC_Interface/run.sh
+Path=/home/HwHiAiUser/Desktop/RBCC/RBCC_Interface
+Icon=utilities-system-monitor
+Terminal=false
+Categories=Utility;Engineering;
+StartupNotify=true

@@ -1,0 +1,68 @@
+{
+  "noise_type": "tonal",
+  "sample_rate": 16000,
+  "duration_s": 4.0,
+  "rms": 0.22860181735572557,
+  "spectral_flatness": 0.005618863386273384,
+  "energy_cv": 0.0464227100476675,
+  "energy_peak_ratio": 1.346679741361231,
+  "dominant_noise_peaks_hz": [
+    968.75,
+    1968.75,
+    3156.25
+  ],
+  "input_clipping": false,
+  "best_warning_frequencies_hz": [
+    2600.0,
+    3750.0,
+    1450.0
+  ],
+  "frequency_choices": [
+    {
+      "frequency_hz": 2600.0,
+      "score": 0.8984990903039158,
+      "local_noise_db": -67.89099377193061,
+      "nearest_peak_distance_hz": 556.25
+    },
+    {
+      "frequency_hz": 3750.0,
+      "score": 0.8195156304135958,
+      "local_noise_db": -65.94755200825074,
+      "nearest_peak_distance_hz": 593.75
+    },
+    {
+      "frequency_hz": 1450.0,
+      "score": 0.7980898042572614,
+      "local_noise_db": -63.86191856424455,
+      "nearest_peak_distance_hz": 481.25
+    }
+  ],
+  "processing_ms": 8.65795499998967,
+  "config": {
+    "sample_rate": 16000,
+    "analysis_duration": 2.0,
+    "stft_window_size": 512,
+    "stft_hop_size": 256,
+    "min_warning_hz": 800.0,
+    "max_warning_hz": 4000.0,
+    "frequency_step_hz": 50.0,
+    "frequency_count": 3,
+    "min_frequency_spacing_hz": 350.0,
+    "fallback_spacing_hz": 200.0,
+    "local_bandwidth_hz": 90.0,
+    "peak_exclusion_hz": 250.0,
+    "peak_prominence_db": 8.0,
+    "low_level_rms": 0.0001,
+    "transient_energy_cv": 1.25,
+    "transient_peak_ratio": 8.0,
+    "broadband_flatness": 0.38,
+    "tonal_flatness": 0.16,
+    "alarm_volume": 0.35,
+    "tone_short_s": 0.2,
+    "tone_long_s": 0.55,
+    "gap_short_s": 0.12,
+    "gap_long_s": 0.3,
+    "fade_s": 0.015,
+    "output_root": "/tmp/industrial_alarm_final_output"
+  }
+}

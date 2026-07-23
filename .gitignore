@@ -1,0 +1,36 @@
+# Python environments, caches, and test artifacts
+**/.venv/
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.mplconfig/
+
+# Runtime logs and generated output
+**/*.log
+linux_code/RBCC_Interface/runtime/
+linux_code/RBCC_Noise/output/
+linux_code/RBCC_Noise/output_deploy_test/
+linux_code/RBCC_Camera/kernel_meta/
+
+# Local dependency/build caches
+linux_code/RBCC_Noise/.debs/
+linux_code/RBCC_Noise/.wheels/
+
+# Historical working copies kept locally
+**/*.backup*
+**/*.before_*
+**/*.orig
+
+# Keil/MDK generated files
+RBCC_STM32/MDK-ARM/RBCC_STM32/
+RBCC_STM32/MDK-ARM/*.bak
+RBCC_STM32/MDK-ARM/*.dep
+RBCC_STM32/MDK-ARM/*.scvd
+RBCC_STM32/MDK-ARM/*.uvguix.*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+desktop.ini

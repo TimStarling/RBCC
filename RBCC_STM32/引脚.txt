@@ -1,0 +1,8 @@
+R1  -  PB14         G1  -   PB15
+B1 -   PD11       GND  
+R2  -  PD13         G2  -  PD12
+B2  -  PG3          E    -   PG2
+A    -  PG5         B    -   PG4
+C    -  PG7          D    -   PG6
+CLK  -PC6          LAT  -  PG8
+OE -  PC8         GND
