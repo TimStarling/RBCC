@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/>
+    </marker>
+    <style>
+      .title { font: 700 34px "SimHei", "Microsoft YaHei", sans-serif; fill: #222; }
+      .label { font: 22px "SimHei", "Microsoft YaHei", sans-serif; fill: #222; }
+      .small { font: 18px "SimHei", "Microsoft YaHei", sans-serif; fill: #222; }
+      .edge { font: 16px "SimHei", "Microsoft YaHei", sans-serif; fill: #222; }
+      .box { fill: #fff; stroke: #222; stroke-width: 2; rx: 4; ry: 4; }
+      .group { fill: none; stroke: #222; stroke-width: 2; }
+      .line { stroke: #222; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .line2 { stroke: #222; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="980" fill="#fff"/>
+  <rect x="55" y="55" width="1490" height="805" class="group"/>
+  <text x="800" y="118" text-anchor="middle" class="title">QT上位机运行逻辑框图</text>
+
+  <rect x="110" y="265" width="150" height="250" class="box"/>
+  <text x="185" y="380" text-anchor="middle" class="label">上位机</text>
+  <text x="185" y="410" text-anchor="middle" class="small">MainWindow</text>
+
+  <rect x="350" y="210" width="150" height="330" class="box"/>
+  <text x="425" y="350" text-anchor="middle" class="label">页面管理</text>
+  <text x="425" y="382" text-anchor="middle" class="small">QStackedWidget</text>
+  <text x="425" y="415" text-anchor="middle" class="small">AD/TCP/Sort</text>
+
+  <rect x="590" y="165" width="740" height="430" class="box"/>
+  <text x="960" y="570" text-anchor="middle" class="label">Sort分拣页面</text>
+
+  <rect x="620" y="245" width="150" height="155" class="box"/>
+  <text x="695" y="305" text-anchor="middle" class="small">摄像头模块</text>
+  <text x="695" y="333" text-anchor="middle" class="small">打开/预览</text>
+  <text x="695" y="361" text-anchor="middle" class="small">采集图片</text>
+
+  <rect x="840" y="220" width="310" height="85" class="box"/>
+  <text x="995" y="255" text-anchor="middle" class="small">图片编码与识别请求</text>
+  <text x="995" y="283" text-anchor="middle" class="small">Base64、token、JSON解析</text>
+
+  <rect x="840" y="355" width="310" height="85" class="box"/>
+  <text x="995" y="390" text-anchor="middle" class="small">识别结果显示</text>
+  <text x="995" y="418" text-anchor="middle" class="small">文本框显示物品名称</text>
+
+  <polygon points="1220,315 1305,375 1220,435 1135,375" fill="#fff" stroke="#222" stroke-width="2"/>
+  <text x="1220" y="368" text-anchor="middle" class="small">是否为</text>
+  <text x="1220" y="395" text-anchor="middle" class="small">“手表”</text>
+
+  <rect x="1370" y="210" width="135" height="330" class="box"/>
+  <text x="1438" y="335" text-anchor="middle" class="small">TCP发送</text>
+  <text x="1438" y="363" text-anchor="middle" class="small">字符“1”</text>
+  <text x="1438" y="391" text-anchor="middle" class="small">到服务器</text>
+
+  <rect x="350" y="625" width="150" height="145" class="box"/>
+  <text x="425" y="680" text-anchor="middle" class="small">TCP页面</text>
+  <text x="425" y="708" text-anchor="middle" class="small">192.168.138.131</text>
+  <text x="425" y="736" text-anchor="middle" class="small">端口8888</text>
+
+  <rect x="620" y="650" width="265" height="95" class="box"/>
+  <text x="753" y="688" text-anchor="middle" class="small">QTcpSocket连接模块</text>
+  <text x="753" y="718" text-anchor="middle" class="small">连接/断开/收发/错误处理</text>
+
+  <rect x="965" y="650" width="225" height="95" class="box"/>
+  <text x="1078" y="688" text-anchor="middle" class="small">连接成功</text>
+  <text x="1078" y="718" text-anchor="middle" class="small">3秒后跳转Sort</text>
+
+  <rect x="1220" y="650" width="260" height="95" class="box"/>
+  <text x="1350" y="688" text-anchor="middle" class="small">资源释放</text>
+  <text x="1350" y="718" text-anchor="middle" class="small">关闭摄像头/退出软件</text>
+
+  <line x1="260" y1="390" x2="348" y2="390" class="line"/>
+  <text x="304" y="370" text-anchor="middle" class="edge">初始化</text>
+
+  <line x1="500" y1="360" x2="588" y2="360" class="line"/>
+  <text x="545" y="340" text-anchor="middle" class="edge">页面切换</text>
+
+  <line x1="770" y1="322" x2="838" y2="263" class="line"/>
+  <line x1="995" y1="305" x2="995" y2="353" class="line"/>
+  <line x1="1150" y1="397" x2="1136" y2="385" class="line2"/>
+  <line x1="1150" y1="397" x2="1135" y2="375" class="line"/>
+  <line x1="1305" y1="375" x2="1368" y2="375" class="line"/>
+  <text x="1340" y="355" text-anchor="middle" class="edge">是</text>
+  <line x1="1220" y1="435" x2="1220" y2="500" class="line2"/>
+  <line x1="1220" y1="500" x2="1000" y2="500" class="line2"/>
+  <line x1="1000" y1="500" x2="1000" y2="442" class="line"/>
+  <text x="1160" y="520" text-anchor="middle" class="edge">否</text>
+
+  <line x1="425" y1="540" x2="425" y2="623" class="line"/>
+  <text x="460" y="590" class="edge">进入TCP</text>
+  <line x1="500" y1="698" x2="618" y2="698" class="line"/>
+  <line x1="885" y1="698" x2="963" y2="698" class="line"/>
+  <line x1="1078" y1="650" x2="1078" y2="596" class="line"/>
+  <text x="1122" y="625" class="edge">跳转</text>
+
+  <line x1="1438" y1="540" x2="1438" y2="648" class="line"/>
+  <line x1="1330" y1="570" x2="1350" y2="648" class="line"/>
+  <text x="1400" y="615" class="edge">退出释放</text>
+
+  <text x="800" y="925" text-anchor="middle" class="label">图 1  QT上位机系统运行逻辑框图</text>
+</svg>

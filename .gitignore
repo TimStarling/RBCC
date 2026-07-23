@@ -6,6 +6,8 @@
 **/.mypy_cache/
 **/.ruff_cache/
 **/.mplconfig/
+**/node_modules/
+**/.pnpm-store/
 
 # Runtime logs and generated output
 **/*.log
@@ -29,6 +31,9 @@ RBCC_STM32/MDK-ARM/*.bak
 RBCC_STM32/MDK-ARM/*.dep
 RBCC_STM32/MDK-ARM/*.scvd
 RBCC_STM32/MDK-ARM/*.uvguix.*
+
+# Qt Creator per-user settings
+**/*.pro.user
 
 # OS/editor files
 .DS_Store

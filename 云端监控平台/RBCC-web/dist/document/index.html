@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RBCC 项目文档在线阅读" />
+    <meta name="theme-color" content="#071426" />
+    <title>RBCC 项目文档</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family:
+          Inter, "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #07111f;
+        color: #f5f8ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        min-height: 100%;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 12% 0%, rgba(40, 125, 255, 0.2), transparent 30rem),
+          linear-gradient(155deg, #071426 0%, #050b14 70%);
+      }
+
+      .page {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        height: 100dvh;
+        padding: 16px;
+        gap: 12px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 64px;
+        padding: 10px 12px 10px 20px;
+        border: 1px solid rgba(147, 184, 255, 0.18);
+        border-radius: 18px;
+        background: rgba(8, 23, 42, 0.82);
+        box-shadow: 0 16px 44px rgba(0, 0, 0, 0.24);
+        backdrop-filter: blur(18px);
+      }
+
+      .identity {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        gap: 14px;
+      }
+
+      .mark {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        flex: 0 0 auto;
+        border: 1px solid rgba(117, 184, 255, 0.45);
+        border-radius: 13px;
+        background: linear-gradient(145deg, #276eff, #0fc3cc);
+        box-shadow: 0 8px 24px rgba(23, 126, 255, 0.28);
+        color: white;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+
+      .title-wrap {
+        min-width: 0;
+      }
+
+      h1 {
+        margin: 0;
+        overflow: hidden;
+        font-size: clamp(17px, 2.2vw, 23px);
+        line-height: 1.25;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .meta {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin: 5px 0 0;
+        color: #9eafc7;
+        font-size: 12px;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #26d6a2;
+        box-shadow: 0 0 10px rgba(38, 214, 162, 0.8);
+      }
+
+      .actions {
+        display: flex;
+        flex: 0 0 auto;
+        gap: 8px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 15px;
+        border: 1px solid rgba(150, 183, 233, 0.22);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        color: #eaf2ff;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 160ms ease,
+          border-color 160ms ease,
+          background 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        border-color: rgba(114, 177, 255, 0.58);
+        background: rgba(64, 134, 255, 0.16);
+      }
+
+      .button.primary {
+        border-color: transparent;
+        background: linear-gradient(135deg, #2877ff, #159db3);
+        box-shadow: 0 8px 20px rgba(28, 111, 232, 0.22);
+      }
+
+      .viewer-shell {
+        min-height: 0;
+        overflow: hidden;
+        border: 1px solid rgba(147, 184, 255, 0.18);
+        border-radius: 18px;
+        background: #20252d;
+        box-shadow: 0 18px 56px rgba(0, 0, 0, 0.34);
+      }
+
+      .viewer {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: #20252d;
+      }
+
+      .fallback {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        padding: 32px;
+        text-align: center;
+      }
+
+      .fallback p {
+        margin: 0 0 16px;
+        color: #c8d4e5;
+      }
+
+      @media (max-width: 680px) {
+        .page {
+          padding: 8px;
+          gap: 8px;
+        }
+
+        .topbar {
+          min-height: 58px;
+          padding: 8px 9px 8px 12px;
+          border-radius: 14px;
+        }
+
+        .mark {
+          width: 38px;
+          height: 38px;
+          border-radius: 11px;
+        }
+
+        .meta,
+        .button.secondary,
+        #fullscreen-button {
+          display: none;
+        }
+
+        .button {
+          min-height: 38px;
+          padding: 0 12px;
+          font-size: 13px;
+        }
+
+        .viewer-shell {
+          border-radius: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="identity">
+          <div class="mark" aria-hidden="true">RBCC</div>
+          <div class="title-wrap">
+            <h1>RBCC 项目文档</h1>
+            <p class="meta"><span class="dot"></span>在线阅读 <span>·</span> 7 页 PDF</p>
+          </div>
+        </div>
+        <nav class="actions" aria-label="文档操作">
+          <button class="button secondary" id="fullscreen-button" type="button">全屏阅读</button>
+          <a class="button secondary" href="./RBCC.pdf" target="_blank" rel="noopener">单独打开</a>
+          <a class="button primary" href="./RBCC.pdf" download="RBCC.pdf">下载 PDF</a>
+        </nav>
+      </header>
+
+      <section class="viewer-shell" id="viewer-shell" aria-label="RBCC PDF 阅读器">
+        <object class="viewer" data="./RBCC.pdf#view=FitH&amp;toolbar=1" type="application/pdf">
+          <div class="fallback">
+            <div>
+              <p>当前浏览器无法直接显示 PDF，请单独打开或下载后阅读。</p>
+              <a class="button primary" href="./RBCC.pdf" target="_blank" rel="noopener">打开 PDF</a>
+            </div>
+          </div>
+        </object>
+      </section>
+    </main>
+
+    <script>
+      const fullscreenButton = document.querySelector('#fullscreen-button')
+      const viewerShell = document.querySelector('#viewer-shell')
+
+      fullscreenButton?.addEventListener('click', async () => {
+        if (document.fullscreenElement) {
+          await document.exitFullscreen()
+          return
+        }
+
+        await viewerShell?.requestFullscreen()
+      })
+
+      document.addEventListener('fullscreenchange', () => {
+        if (fullscreenButton) {
+          fullscreenButton.textContent = document.fullscreenElement ? '退出全屏' : '全屏阅读'
+        }
+      })
+    </script>
+  </body>
+</html>
