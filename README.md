@@ -1,10 +1,10 @@
-# RBCC 龙门起重机智能监测与控制系统
+# RBCC 桥式起重机智能监测与控制系统
 
 [English](#english) | [中文](#中文)
 
 ## 中文
 
-RBCC 是一套面向龙门起重机教学与原型验证的软硬件协同系统。项目以
+RBCC 是一套面向桥式起重机教学与原型验证的软硬件协同系统。项目以
 STM32F407 为现场控制核心，以 Orange Pi/Linux 为监控与分析平台，组合了环境
 传感、灯带与蜂鸣器控制、串口/TCP 通信、视觉检测、自适应噪声警告和浏览器
 调试终端。
@@ -47,7 +47,7 @@ Orange Pi 监控界面 ── TCP :8888 ── HTML 调试终端
 
 ## English
 
-RBCC is a hardware-software system for gantry-crane education and prototype
+RBCC is a hardware-software system for bridge-crane education and prototype
 validation. An STM32F407 handles field control while an Orange Pi/Linux host
 provides monitoring and analysis. The repository combines environmental
 sensing, LED-strip and buzzer control, serial/TCP communication, computer
